@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
-function BlogPage() {
+function BlogPage() { 
     const[data,setData]=useState(null);
 const[names,setNames]=useState("");
 const[email,setEmail]=useState("");
@@ -77,7 +77,7 @@ setInterval(()=>{
       handlePop()
       determine_reload()
     },[])
-    return (
+        return (
         <div>
         <header>
         <div class="container header">
@@ -85,7 +85,7 @@ setInterval(()=>{
         {
           shows?<div>
             <div class="menuToggle">
-        <i onClick={()=>nShow()}>&times;</i>
+        <i onClick={()=>nShow()}> &times;</i>
         </div>
           <ul class="navigation">
           <li class="active"><a href="#home" >Home</a></li>
