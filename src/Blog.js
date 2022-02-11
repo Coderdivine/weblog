@@ -25,8 +25,8 @@ const[subject,setSubject]=useState("");
 const[message,setMessage]=useState("");
 const date = new Date();
 const date_m = date.getDate();
-const handleSubmit=async(e)=>{
-  e.preventDefault();
+const handleSubmit=async()=>{
+ 
   await axios.post("https://heischimdi.herokuapp.com/protfolio/",{name:names,email:email,subject:subject,message:message,date:date_m})
   .then((response)=>{
     alert("Message Sent.")
@@ -40,31 +40,7 @@ setShows(true)
 const nShow=()=>{
   setShows(false)
   }
-/*
-app.post("/protfolio/",(req,res)=>{
-    const name = req.body.name;
-    const email = req.body.email;
-    const subject = req.body.subject;
-    const message = req.body.message;
-    const date = req.body.date;
-      db.query('INSERT INTO protfolio (name,email,subject,message,date)VALUES(?,?,?,?,?)',[name,email,subject,message,date],(err,result)=>{
-          if(err){
-              res.send(err);
-          }else{
-              res.send("Value Inserted");
-          }
-      })
-});
-app.get("/protfolio/get/",(req,res)=>{
-    const query = "SELECT * FROM  protfolio ";
-    db.query(query,(err,result)=>{
-        if(err){
-            res.send(err)}else{
-            res.send(result)
-            }
-        
-    })
-})*/
+
     return (
         <div>
         <header>
@@ -154,7 +130,7 @@ Welcome to Chimdi's blog Privacy policy.
 <p>
  This are some of the information collected by us:<br/>
 "Suscribe" section:<br/>
-While suscribing to chimdi's blog it's optional, please keep in mind that you will not be  able to receive latest information easily unless you suscribe using our "Suscribe" section. 
+While suscribing to chimdi's blog it's optional, please keep in mind that you will not be  able to receive latest information easily unless you suscribe using our "Suscribe" section. 
 </p>
 </div>
 <div class="container-p">

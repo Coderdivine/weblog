@@ -66,10 +66,11 @@ setInterval(()=>{
   window.location.reload();
 },5000)
      }
-     const handleSubmi= async ()=>{
-       axios.post("/https://heroku.app/emails",{email:email}).then((response)=>{
+     const handleSubmi=async()=>{
+       axios.post("https://emailsonboard.herokuapp.com/emails",{type:"blog",email:email}).then((response)=>{
         localStorage.setItem("chimdi-email",email);
         window.location.reload();
+        console.log(response.data)
        })
       
            }
@@ -111,7 +112,7 @@ setInterval(()=>{
            <p>Suscribe to chimdi's blog</p>
          <label>Email</label>
          <input type="email" placeholder='Enter email' onChange={(e)=>setEmail(e.target.value)} required/>
-         <button className='ctn' onClick={()=>handleSubmit()}>Suscribe</button>
+         <button className='ctn' onClick={()=>handleSubmi()}>Suscribe</button>
          </div>
         </div>
           </div>:<div></div>
@@ -153,7 +154,7 @@ Contact Us
 <input type="email" placeholder="Email"  value={email} onChange={(e)=>setEmail(e.target.value)}/>
 <input type="text" placeholder="Subject"  value={subject} onChange={(e)=>setSubject(e.target.value)}/>
 <textarea rows="10" type="text" placeholder="Message here ..."  value={message} onChange={(e)=>setMessage(e.target.value)}></textarea>
-<button onClick={(e)=>handleSubmi(e)}>Send</button>
+<button onClick={(e)=>handleSubmit(e)}>Send</button>
 </div>
 <div class="container-p">
 <p><a href="https://www.instagram.com/_chimdi.xo_" >Instagram</a></p>
