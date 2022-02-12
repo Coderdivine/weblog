@@ -77,7 +77,12 @@ reader?<div>
 <span class="time" onClick={()=>hide()}>&times;</span></header>
 <span>{x.username}</span>
 <div class="stay">
-<p>{x.content}</p>
+  <pre>
+  <p>{x.content}</p>
+
+  </pre>
+
+</div>
 <div class="links">
 <a href={x.link} class="ctn">link 1</a>
 <a href={x.link_one} class="ctn">link 2</a>
@@ -86,7 +91,7 @@ reader?<div>
 
 </div>
 </div>
-</div>
+
 </div>
 :<div></div>
 }

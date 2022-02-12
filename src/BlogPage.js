@@ -25,6 +25,7 @@ const handleSubmit=async(e)=>{
   });
 };
     const getData= async()=>{
+      
     await axios.get("https://chimdiblog.herokuapp.com/getblog").then((response)=>{
       setData(response.data)
     });
