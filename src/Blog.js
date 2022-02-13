@@ -18,6 +18,7 @@ function Blog() {
 const [reader,setReader]= useState(true);
 const hide =()=>{
     setReader(false)
+    window.location = "https://chimdblog.herokuapp.com/"
 }
 const[email,setEmail]=useState("");
 const[names,setNames]=useState("");
@@ -36,10 +37,10 @@ const handleSubmit=async()=>{
 //hey
 const[shows,setShows]=useState(false)
 const dShow=()=>{
-setShows(true)
+setShows(false)
 }
 const nShow=()=>{
-  setShows(false)
+  setShows(true)
   }
 
     return (
@@ -50,7 +51,7 @@ const nShow=()=>{
         {
           shows?<div>
             <div class="menuToggle">
-        <i onClick={()=>dShow()}>&#9776;</i>
+        <i onClick={()=>dShow()}>&times;</i>
         </div>
           <ul class="navigation">
           <li class="active"><a href="#home" >Home</a></li>
@@ -76,7 +77,8 @@ reader?<div>
   <div class="container-reader" >
 <header>{x.title}<br/>
 <span class="time" onClick={()=>hide()}>&times;</span></header>
-<span>{x.username}</span>
+<img src={x.img_one} alt={x.title}/>
+<span>Author: {x.username}</span>
 <div class="stay">
   <pre>
   <p>{x.content}</p>
@@ -85,6 +87,7 @@ reader?<div>
 
 </div>
 <div class="links">
+  <p>click on any link to find related topics likes this</p>
 <a href={x.link} class="ctn">link 1</a>
 <a href={x.link_one} class="ctn">link 2</a>
 <a href={x.link_two} class="ctn">link 3</a>

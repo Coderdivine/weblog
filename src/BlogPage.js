@@ -36,17 +36,19 @@ const handleSubmit=async(e)=>{
     if(data!==null){
       console.log(data);
     }
-   const[popUp,setPopUp]=useState(true);
-    const locals = localStorage.getItem("chimdi-email");
+   const[popUp,setPopUp]=useState(false);
+   // const locals = localStorage.getItem("chimdi-email");
      const handlePop=()=>{
-       if(locals===null){
+       setPopUp(true);
+      /* if(locals===null){
          if( sessionStorage.getItem("regret") ===null){
           setPopUp(true);
          }
        }else{
          setPopUp(false)
-       }
+       }*/
      }
+     /*
      const RunReload=()=>{
 if(sessionStorage.getItem("reload")=== "true"){
   return
@@ -63,10 +65,21 @@ if(sessionStorage.getItem("reload")=== "true"){
      const onRegret=()=>{
       sessionStorage.setItem("regret",true)
       setPopUp(false);
+
 setInterval(()=>{
   window.location.reload();
-},5000)
-     }
+},5000);
+
+     useEffect(()=>{
+      
+      determine_reload()
+    },[])
+     }*/
+     
+     const onRegret=()=>{
+      sessionStorage.setItem("regret",true)
+      setPopUp(false);
+    }
      const handleSubmi=async()=>{
        axios.post("https://emailsonboard.herokuapp.com/emails",{type:"blog",email:email}).then((response)=>{
         localStorage.setItem("chimdi-email",email);
@@ -75,9 +88,11 @@ setInterval(()=>{
        })
       
            }
-     useEffect(()=>{
-      handlePop()
-      determine_reload()
+    useEffect(()=>{
+      setInterval(()=>{
+        handlePop();
+      },5000)
+      
     },[])
         return (
         <div>
@@ -136,7 +151,7 @@ setInterval(()=>{
 <span>#{x.tag}</span>
 <span>Views:{x.views}</span>
 </div>
-<p>{x.content.length > 24 ? x.content.substring(0,24) +"...":x.content.length}</p>
+<p>{x.content.length > 70 ? x.content.substring(0,69) +"...":x.content.length}</p>
 </div>
 </div>
 </div>
