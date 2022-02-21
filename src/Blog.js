@@ -34,7 +34,6 @@ const handleSubmit=async()=>{
     console.log(response.data);
   });
 };
-//hey
 const[shows,setShows]=useState(false)
 const dShow=()=>{
 setShows(false)
@@ -47,7 +46,7 @@ const nShow=()=>{
         <div>
         <header>
         <div class="container header">
-        <a href="#" class="logo">Future<span>.</span></a>
+        <a href="#" class="logo">Weiscan<span>.</span></a>
         {
           shows?<div>
             <div class="menuToggle">
@@ -77,7 +76,7 @@ reader?<div>
   <div class="container-reader" >
 <header>{x.title}<br/>
 <span class="time" onClick={()=>hide()}>&times;</span></header>
-<img src={x.img_one} alt={x.title}/>
+<img src={"https://chimdiblog.herokuapp.com/uploads/" + x.img_one} alt={x.title}/>
 <span>Author: {x.username}</span>
 <div class="stay">
   <pre>
@@ -125,21 +124,21 @@ Contact Us
 Support Us
 </header>
 <div class="container-p">
-<p> To support chimdi's click
+<p> To support Weiscan click
 <a href="https://marvshares.netlify.app" >here</a>
 </p>
 </div>
 <header id="p" class="header-p"> Privacy policy.</header>
 <div class="container-p">
 <p>
-Welcome to Chimdi's blog Privacy policy.
+Welcome to Weiscan blog Privacy policy.
 </p>
 </div>
 <div class="container-p">
 <p>
  This are some of the information collected by us:<br/>
 "Suscribe" section:<br/>
-While suscribing to chimdi's blog it's optional, please keep in mind that you will not be  able to receive latest information easily unless you suscribe using our "Suscribe" section. 
+While suscribing to Weiscan blog it's optional, please keep in mind that you will not be  able to receive latest information easily unless you suscribe using our "Suscribe" section. 
 </p>
 </div>
 <div class="container-p">
@@ -151,7 +150,7 @@ We collect your email in order to update you about recent post or upcoming conte
 <div class="container-p">
 <p>
 • Support Link:<br/>
-If client wishes to donate to chimdi's blog he/she would have to submit some following details.
+If client wishes to donate to Weiscan blog he/she would have to submit some following details.
 This details is handled by your payment method available e.g (Paystack,FlutterWave),your bank credentials
  are secured !.
  Also we collect other information like your name, email, and phone number to take note of all our supporters.
