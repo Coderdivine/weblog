@@ -140,12 +140,12 @@ setInterval(()=>{
 <div class="container main" id="containers">
 <div class="col">
 <div class="post" id={x.name}>
-<img  class="post-img" src={"https://chimdiblog.herokuapp.com/uploads/" + x.img_one}  alt={x.title}/>
+<img  class="post-img" src={"https://chimdiblog.herokuapp.com/uploads/"+x.img_one}  alt={x.title}/>
 <div class="post-info">
-<Link to={{pathname:`/content/${x.id}`}}><h2>{x.title}</h2></Link>
+<Link to={{pathname:`/content/${x.title}`}}><h2>{x.title}</h2></Link>
 
 <div class="user-info">
-<img src={"https://chimdiblog.herokuapp.com/uploads/" + x.img_two}  alt={x.title}/>
+<img src={"https://chimdiblog.herokuapp.com/uploads/"+x.img_two}  alt={x.title}/>
 <span>{x.username}</span>
 <span>August 1,2021</span>
 <span>#{x.tag}</span>

@@ -66,7 +66,7 @@ const nShow=()=>{
         </header>
 {
     data && data.filter(x=>{
-        if(x.id===id){
+        if(x.title===id){
             return id
         }
     }).map(x=><div>
@@ -76,7 +76,7 @@ reader?<div>
   <div class="container-reader" >
 <header>{x.title}<br/>
 <span class="time" onClick={()=>hide()}>&times;</span></header>
-<img src={"https://chimdiblog.herokuapp.com/uploads/" + x.img_one} alt={x.title}/>
+<img src={"https://chimdiblog.herokuapp.com/uploads/"+x.img_one} alt={x.title}/>
 <span>Author: {x.username}</span>
 <div class="stay">
   <pre>
